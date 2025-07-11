@@ -92,7 +92,6 @@
 * **Process Filtering** - Intelligent target selection and process avoidance
 * **Memory Layout Manipulation** - Direct ELF structure modification
 * **Polymorphic Transformation** - Register shuffling and junk code insertion
-* **Educational Framework** - Comprehensive demonstration of virus techniques
 * **Cross-platform Assembly** - Pure x86_64 assembly implementation
 
 ## How To Use
@@ -161,53 +160,15 @@ The virus consists of several key components:
 - **[Death.s](src/Death.s)** - Main virus entry point and control logic
 - **[Death.inc](src/Death.inc)** - System call definitions and data structures  
 - **[Deathf.s](src/Deathf.s)** - File system traversal and infection routines
-- **[functions/](src/functions/)** - Modular infection and utility functions
+- **[rc4.s](src/rc4.s)** - RC4 encryption implementation
+- **[encrypt_start.s](src/encrypt_start.s)** - Encrypted payload section
+- **[functions/](src/functions/)** - Modular infection and utility functions:
+  - `infection.s` - Core binary infection logic
+  - `prepare_infection.s` - Pre-infection validation and setup
+  - `check_forbidden.s` - Process filtering and detection avoidance
+  - `updata_signature.s` - Signature evolution mechanisms
+  - `parse_dir.s` - Directory parsing utilities
 - **[Makefile](Makefile)** - Build system with encryption integration
-
-## Educational Purpose
-
-This project demonstrates advanced malware techniques for cybersecurity education:
-
-### Learning Objectives
-- Understanding ELF binary format manipulation
-- Assembly language virus construction principles
-- Anti-analysis and evasion technique implementation
-- Metamorphic code generation algorithms
-- System-level programming in x86_64 assembly
-
-### Research Applications
-- Malware analysis methodology development
-- Defensive security tool testing
-- Cybersecurity curriculum enhancement
-- Academic virus research
-
-## Credits
-
-This educational virus uses the following techniques and concepts:
-
-- **Assembly Language**: x86_64 NASM implementation
-- **ELF Format**: Linux binary manipulation
-- **Cryptography**: RC4 encryption algorithm
-- **Anti-Debug**: ptrace-based detection methods
-- **Metamorphism**: Code variation algorithms
-
-## Related
-
-[🔬 Virus Analysis Tools](https://github.com/search?q=malware+analysis) - Tools for analyzing malware samples
-
-## Educational Use Only
-
-This software is intended for:
-- 🎓 Cybersecurity education and training
-- 🔬 Academic malware research
-- 🛡️ Defensive security development
-- 📚 Assembly language instruction
-
-## You may also like...
-
-- [Assembly Language Learning Resources](https://github.com/topics/assembly) - Assembly programming tutorials
-- [ELF Binary Analysis Tools](https://github.com/topics/elf-analysis) - Binary analysis utilities
-- [Cybersecurity Education](https://github.com/topics/cybersecurity-education) - Educational security projects
 
 ## License
 
@@ -223,6 +184,5 @@ This software is intended for:
 
 > [42 School](https://42.fr) &nbsp;&middot;&nbsp;
 > GitHub [@jdecorte-be](https://github.com/jdecorte-be) &nbsp;&middot;&nbsp;
-> Project [D34TH](https://github.com/jdecorte-be/D34TH)
 
 </div>
