@@ -6,22 +6,42 @@
   <br>
 </h1>
 
-<h4 align="center">A metamorphic ELF64 virus demonstrating advanced infection techniques built with <a href="https://www.nasm.us/" target="_blank">NASM</a>.</h4>
-
 <p align="center">
-  <a href="https://github.com/jdecorte-be/D34TH/releases">
-    <img src="https://img.shields.io/github/v/release/jdecorte-be/D34TH?style=flat-square&color=white&labelColor=black"
-         alt="Release">
-  </a>
-  <a href="https://github.com/jdecorte-be/D34TH/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/license-Educational-red?style=flat-square&labelColor=black" alt="License">
-  </a>
-  <a href="https://github.com/jdecorte-be/D34TH/commits/main">
-    <img src="https://img.shields.io/github/last-commit/jdecorte-be/D34TH?style=flat-square&color=white&labelColor=black" alt="Last Commit">
+  <a href="https://github.com/jdecorte-be/D34TH">
+    <img src="https://shields.io/badge/D34TH-Security%20Research-critical?logoColor=white&labelColor=000000&color=8B0000"
+         alt="D34TH Security Research">
   </a>
   <a href="https://github.com/jdecorte-be/D34TH">
-    <img src="https://img.shields.io/badge/platform-Linux%20x86__64-blue?style=flat-square&labelColor=black" alt="Platform">
+    <img src="https://shields.io/badge/Platform-Linux%20x86__64-blue?logo=linux&logoColor=white&labelColor=000000"
+         alt="Linux x86_64 Platform">
   </a>
+  <a href="https://github.com/jdecorte-be/D34TH/stargazers">
+    <img src="https://shields.io/github/stars/jdecorte-be/D34TH?logo=star&logoColor=white&labelColor=000000&color=yellow"
+         alt="GitHub Stars">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/jdecorte-be/D34TH/issues">
+    <img src="https://shields.io/github/issues/jdecorte-be/D34TH?logoColor=white&labelColor=000000&color=orange"
+         alt="Open Issues">
+  </a>
+  <a href="https://github.com/jdecorte-be/D34TH">
+    <img src="https://shields.io/github/repo-size/jdecorte-be/D34TH?logo=database&logoColor=white&labelColor=000000&color=purple"
+         alt="Repository Size">
+  </a>
+  <a href="https://github.com/jdecorte-be/D34TH">
+    <img src="https://shields.io/github/languages/top/jdecorte-be/D34TH?logo=code&logoColor=white&labelColor=000000&color=green"
+         alt="Top Language">
+  </a>
+  <a href="https://github.com/jdecorte-be/D34TH">
+    <img src="https://shields.io/badge/⚠️-RESEARCH%20ONLY-critical?labelColor=000000&color=FF0000"
+         alt="Research Only Warning">
+  </a>
+  <a href="https://github.com/jdecorte-be/D34TH">
+    <img src="https://shields.io/badge/Encryptor-RC4-informational?logo=book&logoColor=white&labelColor=000000&color=blue"
+         alt="Educational Use">
+  </a>  
 </p>
 
 <p align="center">
@@ -38,17 +58,28 @@
   
 </div>
 
-## ⚠️ Warning
+## 🚨 Critical Security Notice
 
-> **🚨 CRITICAL NOTICE 🚨**
+> **⚠️ EDUCATIONAL MALWARE RESEARCH PROJECT ⚠️**
 > 
-> This is a **proof-of-concept virus** for educational and research purposes **ONLY**.
+> This repository contains a **proof-of-concept metamorphic virus** designed exclusively for:
+> - 🎓 **Cybersecurity Education**
+> - 🔬 **Academic Research**
+> - 🛡️ **Defensive Security Development**
 > 
-> - ❌ **DO NOT** use on production systems
-> - ❌ **DO NOT** deploy outside isolated environments  
-> - ❌ **DO NOT** use for malicious purposes
-> - ✅ **ONLY** use in virtual machines
-> - ✅ **ONLY** for cybersecurity education
+> ### ❌ Prohibited Uses
+> - Production systems or networks
+> - Any malicious activities
+> - Distribution outside educational contexts
+> - Execution on non-isolated environments
+> 
+> ### ✅ Authorized Uses
+> - Isolated virtual machine testing
+> - Academic malware analysis courses
+> - Security research and development
+> - Cybersecurity training programs
+
+---
 
 ## Key Features
 
