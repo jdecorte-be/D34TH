@@ -192,6 +192,6 @@ The virus consists of several key components:
 **🎯 The Answer to Everything: Knowledge, Responsibility, and Code**
 
 > [42 School](https://42.fr) &nbsp;&middot;&nbsp;
-> GitHub [@jdecorte-be](https://github.com/jdecorte-be) &nbsp;&middot;&nbsp;
+> GitHub [@jdecorte-be](https://github.com/jdecorte-be)
 
 </div>
