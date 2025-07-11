@@ -85,16 +85,15 @@
   - Complete filesystem traversal starting from root directory (/)
 * **Cross-platform Assembly** - Pure x86_64 assembly implementation
 
-## Project Evolution
 
-Death represents the culmination of an advanced malware research series, building upon the foundational techniques developed in the predecessor viruses: War, Pestilence, and Famine. This final iteration incorporates the most sophisticated anti-analysis and metamorphic capabilities, making it exceptionally resistant to reverse engineering through advanced instruction substitution techniques. Death inherits and enhances all features from the previous projects, so reviewing War README.md, Pestilence README.md, and Famine README.md is essential to understanding the complete feature set integrated into this implementation.
+
+## Project Evolution
+Death represents the culmination of my advanced malware research series, building upon the foundational techniques I developed in my predecessor viruses: War, Pestilence, and Famine. This final iteration incorporates the most sophisticated anti-analysis and metamorphic capabilities, making it exceptionally resistant to reverse engineering through advanced instruction substitution techniques. Death inherits and enhances all features from my previous projects, so reviewing my War README.md, Pestilence README.md, and Famine README.md is essential to understanding the complete feature set integrated into this implementation.
 
 ## Infection Methodology
-
 This project creates an advanced ELF executable capable of embedding its polymorphic code within target binaries. Death employs a comprehensive recursive infection strategy, systematically traversing the entire filesystem starting from the root directory (/). This approach ensures maximum propagation by discovering and infecting all accessible ELF64 binaries throughout the system hierarchy. A file is considered "infected" when it contains the complete virus payload that executes transparently without altering the host's original functionality or producing detectable output, ensuring stealth operation to avoid security detection.
 
 ## Signature Architecture
-
 Post-infection, targeted files contain an evolved signature format: `Death version 1.0 (c)oded by jdecorte-be:alexafer - XXXXXXXXXXXXXXXX:XXXXXXXXXX.XXXXXXXXXX`, where:
 
 - **Infection Index**: Sequential identifier tracking infection propagation order across processes
@@ -102,13 +101,13 @@ Post-infection, targeted files contain an evolved signature format: `Death versi
 - **Mutation Signature**: Computed by XORing 32-byte segments of the entire metamorphic payload
 - **Temporal Signature**: Timestamp-based component ensuring unique identification per infection
 
-The signature's final component represents a significant advancement over War's methodology. Instead of XORing only the decryptor code (`_virus` to `_decrypt`), Death XORs the complete encrypted and metamorphic payload. This approach ensures that every instruction mutation performed by the metamorphic engine generates a unique signature, creating an evolutionary fingerprint that changes with each code transformation cycle.
+The signature's final component represents a significant advancement over my War methodology. Instead of XORing only the decryptor code (`_virus` to `_decrypt`), Death XORs the complete encrypted and metamorphic payload. This approach ensures that every instruction mutation performed by the metamorphic engine generates a unique signature, creating an evolutionary fingerprint that changes with each code transformation cycle.
 
-## Technical Heritage
+## Series Evolution
+Death inherits comprehensive capabilities from my previous virus implementations including debugger detection mechanisms, decryptor mutation algorithms, recursive root filesystem infection, and advanced evasion techniques. The complete technical foundation requires understanding the architectural evolution documented in my War, Pestilence, and Famine README files to fully comprehend Death's integrated feature matrix.
 
-Death inherits comprehensive capabilities from its predecessors including debugger detection mechanisms, decryptor mutation algorithms, recursive root filesystem infection, and advanced evasion techniques. The complete technical foundation requires understanding the architectural evolution documented in War, Pestilence, and Famine README files to fully comprehend Death's integrated feature matrix.
+
 ## How To Use
-
 To compile and run this educational virus, you'll need [NASM](https://www.nasm.us/) and [GCC](https://gcc.gnu.org/) installed on a Linux x86_64 system. **IMPORTANT: Only run in isolated virtual machines.**
 
 ```bash
