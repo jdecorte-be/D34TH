@@ -1,7 +1,5 @@
 <h1 align="center">
-  <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="assets/banner.png" alt="Markdownify" ></a>
-  <br>
+  <a href="https://github.com/jdecorte-be/D34TH"><img src="assets/banner.png" alt="D34TH" ></a>
   D34TH
   <br>
 </h1>
