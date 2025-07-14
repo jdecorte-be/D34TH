@@ -179,6 +179,15 @@ The virus consists of several key components:
   - `parse_dir.s` - Directory parsing utilities
 - **[Makefile](Makefile)** - Build system with encryption integration
 
+## VirusTotal Analysis
+
+For transparency and educational value, here is a sample VirusTotal analysis of a compiled binary from this project.  
+**Note:** Detection rates may vary depending on metamorphic mutations and the scanning date.
+
+- [VirusTotal report link](https://www.virustotal.com/gui/file/5ce9a1490d77adebddaf56db209ee8a829c225ec841908cad047a176347f9707)
+- **Detection Ratio:** 0/65 (as of June 2025)
+<img src="assets/virustotal.png"></img>
+
 ## License
 
 **Educational and Research Use Only** - See project files for detailed terms.
