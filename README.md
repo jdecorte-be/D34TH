@@ -240,8 +240,6 @@ For transparency and educational value, here is a sample VirusTotal analysis of 
 
 **⚠️ DISCLAIMER**: The authors provide this code solely for educational purposes. Users are responsible for ensuring compliance with applicable laws. The authors disclaim all liability for misuse or damage.
 
----
-
 <div align="center">
 
 > [42 School](https://42.fr) &nbsp;&middot;&nbsp;
