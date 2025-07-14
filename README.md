@@ -45,6 +45,7 @@
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
+  <a href="#infection-process">Infection Process</a> •
   <a href="#technical-details">Technical Details</a> •
   <a href="#architecture">Architecture</a> •
   <a href="#educational-purpose">Educational Purpose</a> •
@@ -124,43 +125,88 @@ $ make
 $ ./Death
 ```
 
-## Technical Details
 
-### Infection Process
-1. **Target Discovery**: Scans specified directories for ELF64 binaries
-2. **Binary Analysis**: Parses ELF headers and validates infection targets
-3. **Code Generation**: Creates unique metamorphic payload variants
-4. **Header Modification**: Updates program headers and entry points
-5. **Payload Injection**: Inserts encrypted virus code into target binary
-6. **Signature Evolution**: Appends mutated infection signature
+## Infection Process
 
-### Anti-Analysis Techniques
-- **Debugger Detection**: Multiple ptrace-based detection methods
-- **Process Name Filtering**: Avoids security tools and analyzers
-- **Code Encryption**: RC4 encryption of sensitive payload sections
-- **Control Flow Obfuscation**: Dynamic jump target modification
-- **Junk Code Insertion**: Random NOP sequence generation
+<details open>
+<summary>1. <strong>Target Discovery</strong></summary>
 
-### Memory Architecture
+The virus initiates a recursive scan of the filesystem, beginning at the root directory (<code>/</code>). It systematically explores subdirectories and examines each file encountered. For each file, the virus checks:
+<ul>
+  <li>If it is an ELF64 binary (Linux 64-bit executable format)</li>
+  <li>If the file is not in a filtered list (e.g., security tools and known analysis programs are skipped)</li>
+  <li>If the file is not already infected (by searching for its unique evolutionary signature)</li>
+</ul>
+This process ensures that only new, valid, and suitable binaries are considered for infection.
+</details>
 
-```
-ELF64 Binary Structure:
-┌─────────────────┐
-│ ELF Header      │ ← Modified e_entry
-├─────────────────┤
-│ Program Headers │ ← PT_NOTE → PT_LOAD
-├─────────────────┤
-│ Original Code   │
-├─────────────────┤
-│ Metamorphic     │ ← Unique per infection
-│ Virus Payload   │
-├─────────────────┤
-│ Encrypted Data  │ ← RC4 encrypted
-├─────────────────┤
-│ Evolution       │ ← Mutated signature
-│ Signature       │
-└─────────────────┘
-```
+<details open>
+<summary>2. <strong>Binary Analysis</strong></summary>
+
+Once a potential target is found, the virus parses the ELF header and segment tables of the binary. The analysis includes:
+<ul>
+  <li>Verifying the ELF magic bytes and architecture (ELF64)</li>
+  <li>Checking for existing infection signatures to avoid reinfection</li>
+  <li>Ensuring the binary is writable and executable (suitable for code injection)</li>
+  <li>Locating an appropriate segment (e.g., converting a <code>PT_NOTE</code> to <code>PT_LOAD</code>) for payload injection</li>
+</ul>
+This step is critical for maintaining host stability and for stealth, since the virus avoids corrupting binaries or overwriting crucial data.
+</details>
+
+<details open>
+<summary>3. <strong>Code Generation (Metamorphic Mutation)</strong></summary>
+
+For every infection attempt, the virus mutates its payload, creating a new, functionally equivalent but bytewise-unique variant. Mutation strategies include:
+<ul>
+  <li>Register reassignment (changing which registers are used by the code)</li>
+  <li>Instruction substitution (e.g., replacing <code>ADD</code> with <code>SUB</code> or using different ways to clear a register)</li>
+  <li>Junk and NOP code insertion to further obfuscate the payload</li>
+</ul>
+This process hinders static detection and reverse engineering, as every infection results in a different binary code sequence.
+</details>
+
+<details open>
+<summary>4. <strong>Header Modification</strong></summary>
+
+The virus alters the ELF headers to ensure its payload is executed first. Actions include:
+<ul>
+  <li>Updating the binary's entry point (<code>e_entry</code>) to point to the injected payload</li>
+  <li>Modifying or creating a program segment (e.g., <code>PT_LOAD</code>) to contain the payload and ensure it is marked executable</li>
+</ul>
+After the payload runs, it jumps to the original entry point so the host program behaves as expected, maintaining stealth.
+</details>
+
+<details open>
+<summary>5. <strong>Payload Injection</strong></summary>
+
+The mutated payload is encrypted using RC4 with a unique key for every infection. The virus then:
+<ul>
+  <li>Injects the encrypted payload into the chosen segment of the binary, without overwriting the host's original code</li>
+  <li>Ensures the payload is mapped into memory for execution</li>
+  <li>Preserves the host functionality and output, so the infection remains undetectable during normal use</li>
+</ul>
+</details>
+
+<details open>
+<summary>6. <strong>Signature Evolution</strong></summary>
+
+After a successful infection, the virus appends a unique signature to the infected file. This signature contains:
+<ul>
+  <li>An infection index to track propagation order</li>
+  <li>An RC4 encryption key fragment used for this instance</li>
+  <li>A mutation signature, generated by XORing 32-byte chunks of the payload (covering all code, not just the decryptor)</li>
+  <li>A timestamp-based value for additional uniqueness</li>
+</ul>
+This signature prevents double-infection, tracks mutation lineage, and is unique for every infected binary.
+</details>
+
+<p><strong>Summary:</strong><br>
+D34TH discovers and analyzes ELF64 binaries, generates a new metamorphic and encrypted payload for every infection, modifies ELF headers, injects the payload without disrupting the host's behavior, and marks the infected file with a unique evolving signature.
+</p>
+</details>
+
+
+---
 
 ## Architecture
 
