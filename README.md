@@ -95,7 +95,7 @@ Death represents the culmination of my advanced malware research series, buildin
 This project creates an advanced ELF executable capable of embedding its polymorphic code within target binaries. Death employs a comprehensive recursive infection strategy, systematically traversing the entire filesystem starting from the root directory (/). This approach ensures maximum propagation by discovering and infecting all accessible ELF64 binaries throughout the system hierarchy. A file is considered "infected" when it contains the complete virus payload that executes transparently without altering the host's original functionality or producing detectable output, ensuring stealth operation to avoid security detection.
 
 ## Signature Architecture
-Post-infection, targeted files contain an evolved signature format: `Death version 1.0 (c)oded by jdecorte-be:alexafer - XXXXXXXXXXXXXXXX:XXXXXXXXXX.XXXXXXXXXX`, where:
+Post-infection, targeted files contain an evolved signature format: `Death version 1.0 (c)oded by jdecorte:alexafer - XXXXXXXXXXXXXXXX:XXXXXXXXXX.XXXXXXXXXX`, where:
 
 - **Infection Index**: Sequential identifier tracking infection propagation order across processes
 - **Encryption Key**: Dynamic RC4 key used for payload encryption during each replication cycle  
