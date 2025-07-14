@@ -244,8 +244,6 @@ For transparency and educational value, here is a sample VirusTotal analysis of 
 
 <div align="center">
 
-**🎯 The Answer to Everything: Knowledge, Responsibility, and Code**
-
 > [42 School](https://42.fr) &nbsp;&middot;&nbsp;
 > GitHub [@jdecorte-be](https://github.com/jdecorte-be)
 
